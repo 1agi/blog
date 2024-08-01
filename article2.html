@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.imgur.com/iOPDuaI.png" type="image/x-icon">
+    <title>math-primer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">
+    <style>
+        .katex-display > .katex {
+            max-width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
+
+<body style="font-family: Libre Baskerville, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #4f4f4e; font-size: small;"  bgcolor="#fdf6e3">
+    <a href="index.html" class="back-arrow">&#8592;</a>
+    <header>
+        <h1 style="text-align: center;">$$Math~primer~in~ML$$</h1>
+        <h1 style="text-align: center; font-size: smaller; font-weight: 300;">—$$arjun$$</h1>
+    </header>
+    
+    <main>
+        <article id="content">
+            <!-- Markdown content will be rendered here -->
+        </article>
+    </main>
+    
+    <footer style="text-align: center; margin-top: 40px;">
+        <p><a href="index.html" style="color: #333; text-decoration: none;">Back to Home</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@5.0.2/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+    <script>
+        // Custom renderer to handle LaTeX
+        const renderer = {
+            paragraph(text) {
+                return text;
+            }
+        };
+
+        marked.use({ renderer: renderer });
+
+        async function renderMarkdown() {
+            try {
+                const response = await fetch('article2.md');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const markdown = await response.text();
+                document.getElementById('content').innerHTML = marked.parse(markdown);
+                
+                // Render LaTeX in the rendered HTML
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "$", right: "$", display: false},
+                        {left: "\\begin{align*}", right: "\\end{align*}", display: true}
+                    ],
+                    throwOnError: false,
+                    output: 'html',
+                    strict: false
+                });
+            } catch (error) {
+                console.error('Error loading or rendering markdown:', error);
+                document.getElementById('content').innerHTML = `<p>Error loading content: ${error.message}</p>`;
+            }
+        }
+
+        renderMarkdown();
+    </script>
+</body>
+</html>
