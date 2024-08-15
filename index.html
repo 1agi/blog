@@ -34,9 +34,8 @@
     <footer style="text-align: center; margin-top: 40px; font-size: small;">
         <p>Contact: <a href="https://x.com/arjunkocher" target="_blank">x/arjunkocher</a></p>
         <p>last updated: <span id="lastUpdated"></span>
-
-        <a href='https://www.free-counters.org/'>free-Counters.org</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=1f56b9bae412c49ce16c57aed6c241fa102eef7d'></script>
-        <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1221113/t/3"></script>
+        <br>
+        <a href="" title=""><img src="https://counter2.optistats.ovh/private/freecounterstat.php?c=7h887lyqychkc88h1tact6qpsh7wnq9k" border="0" title="" alt=""></a>
     </footer>
 
     <script>
@@ -55,41 +54,6 @@
 
             // Update last updated date
             document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString();
-
-            // Handle visit count
-            function updateVisitCount() {
-                const countElement = document.getElementById('visitCount');
-                
-                // Try to get count from API
-                fetch('https://api.countapi.xyz/hit/arjunkocherblog/visits')
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        console.log('API response:', data);
-                        countElement.textContent = data.value;
-                        localStorage.setItem('visitCount', data.value);
-                    })
-                    .catch(error => {
-                        console.error('Error fetching visit count:', error);
-                        
-                        // Fallback to local storage
-                        let localCount = localStorage.getItem('visitCount');
-                        if (localCount === null) {
-                            localCount = 1;
-                        } else {
-                            localCount = parseInt(localCount) + 1;
-                        }
-                        localStorage.setItem('visitCount', localCount);
-                        countElement.textContent = localCount + ' (local)';
-                    });
-            }
-
-            updateVisitCount();
-            
         });
     </script>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
