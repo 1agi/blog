@@ -1,5 +1,5 @@
 <br><br>
-> Some mathematical concepts that will come in handy while understanding Machine Learning.
+> Some mathematical concepts that will come in handy while learning Machine Learning.
 
 <br><br>
 # Linear Algebra
