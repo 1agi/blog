@@ -37,7 +37,7 @@ learns from being given the 'right answers' (y:output labels)
 ###### Regression
 Regression is predicting a number from infinitely many possible outputs.
 
-![fig1.0](https://imgur.com/LW5rI30)
+<img src="https://i.imgur.com/LW5rI30.jpeg" alt="fig1.0" width="500"/>
 
 - **Classification (Class/Category)**
 Classification predict categories from a small number of possible outputs.
