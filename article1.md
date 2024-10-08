@@ -78,7 +78,7 @@ Classification model predicts categories (small number of possible outputs).
 
 
 The training set has both input features x and output targets y.
-<img src="https://i.imgur.com/Y6k15O3.jpeg" alt="fig1.0" width="500"/>
+<img src="https://i.imgur.com/Y6k15O3.jpeg" width="500"/>
 
 #### **How to represent f?**
 (f is a straight line for now)
@@ -90,9 +90,7 @@ f is a function that takes x as input and depending on the values of w and b, ou
 - When there is only a single feature x, we use Linear regression with one variable, also called Univariate linear regression.
 
 - plotting the training set on a graph
-<img src="https://i.imgur.com/eOXRHQl.jpeg" alt="fig1.0" width="500"/>
-
-[[C1_W1_Lab02_Model_Representation_Soln]]
+<img src="https://i.imgur.com/eOXRHQl.jpeg" width="500"/>
 
 ## Implementing the model $f_{w,b}$ for linear regression with one variable
 
@@ -221,7 +219,7 @@ plt.xlabel('Size (1000 sqft)')
 plt.show()
 ```
 
-<img src="https://i.imgur.com/NgfNAbS.jpeg" alt="fig1.0" width="500"/>
+<img src="https://i.imgur.com/NgfNAbS.jpeg" width="500"/>
 
 ## Model function
 As described in lecture, the model function for linear regression (which is a function that maps from `x` to `y`) is represented as 
@@ -299,7 +297,7 @@ plt.show()
 ```
 
 
-<img src="https://i.imgur.com/mmuCzFt.png" alt="fig1.0" width="500"/>
+<img src="https://i.imgur.com/CcRHPme.png" width="500"/>
 
 
 As you can see, setting $w = 100$ and $b = 100$ does *not* result in a line that fits our data. 
@@ -309,7 +307,7 @@ Try experimenting with different values of $w$ and $b$. What should the values b
 #### Tip:
 Try $w = 200$ and $b = 100$
 
-<img src="https://i.imgur.com/Gs4Rufv.jpeg" alt="fig1.0" width="500"/>
+<img src="https://i.imgur.com/Gs4Rufv.jpeg" width="500"/>
 ### Prediction
 Now that we have a model, we can use it to make our original prediction. Let's predict the price of a house with 1200 sqft. Since the units of $x$ are in 1000's of sqft, $x$ is 1.2.
 
