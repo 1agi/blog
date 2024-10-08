@@ -78,7 +78,7 @@ Classification model predicts categories (small number of possible outputs).
 
 
 The training set has both input features x and output targets y.
-<img src="https://i.imgur.com/Y6k15O3.jpeg" width="400"/>
+<img src="https://i.imgur.com/Y6k15O3.jpeg" width="350"/>
 
 #### **How to represent f?**
 (f is a straight line for now)
@@ -90,7 +90,7 @@ f is a function that takes x as input and depending on the values of w and b, ou
 - When there is only a single feature x, we use Linear regression with one variable, also called Univariate linear regression.
 
 - plotting the training set on a graph
-<img src="https://i.imgur.com/eOXRHQl.jpeg" width="400"/>
+<img src="https://i.imgur.com/eOXRHQl.jpeg" width="350"/>
 
 ## Implementing the model $f_{w,b}$ for linear regression with one variable
 
@@ -124,20 +124,20 @@ plt.style.use('./deeplearning.mplstyle')
 
 ### Problem Statement
 
-we will use the motivating example of housing price prediction.  
-This lab will use a simple data set with only two data points - a house with 1000 square feet(sqft) sold for \\$300,000 and a house with 2000 square feet sold for \\$500,000. These two points will constitute our *data or training set*. In this lab, the units of size are 1000 sqft and the units of price are 1000s of dollars.
+we will use the motivating example of housing price prediction.
 <br>
+This lab will use a simple data set with only two data points - a house with 1000 square feet(sqft) sold for \\$300,000 and a house with 2000 square feet sold for \\$500,000. These two points will constitute our *data or training set*. In this lab, the units of size are 1000 sqft and the units of price are 1000s of dollars.
+<br> <br>
 
 | Size (1000 sqft) | Price (1000s of dollars) |
 | ---------------- | ------------------------ |
 | 1.0              | 300                      |
 | 2.0              | 500                      |
-
+<br>
 You would like to fit a linear regression model (shown above as the blue straight line) through these two points, so you can then predict price for other houses - say, a house with 1200 sqft.
-
-
+<br>
 Please run the following code cell to create your `x_train` and `y_train` variables. The data is stored in one-dimensional NumPy arrays.
-
+<br>
 
 ```python
 # x_train is the input variable (size in 1000 square feet)
@@ -298,7 +298,7 @@ plt.show()
 ```
 
 
-<img src="https://i.imgur.com/CcRHPme.png" width="400"/>
+<img src="https://i.imgur.com/CcRHPme.png" width="350"/>
 
 
 As you can see, setting $w = 100$ and $b = 100$ does *not* result in a line that fits our data. 
@@ -308,7 +308,7 @@ Try experimenting with different values of $w$ and $b$. What should the values b
 #### Tip:
 Try $w = 200$ and $b = 100$
 
-<img src="https://i.imgur.com/Gs4Rufv.jpeg" width="400"/>
+<img src="https://i.imgur.com/Gs4Rufv.jpeg" width="350"/>
 <br>
 ### Prediction
 Now that we have a model, we can use it to make our original prediction. Let's predict the price of a house with 1200 sqft. Since the units of $x$ are in 1000's of sqft, $x$ is 1.2.
