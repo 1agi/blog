@@ -9,7 +9,7 @@ Machine learning - Field of study that gives computers the ability to learn with
 
 ## Supervised Learning
 Learns from being given the **right answers**.
-
+<br>
 x -> y
 (input) -> (output)
 
@@ -60,7 +60,7 @@ compress data using fewer numbers
 ### Linear Regression Model
 fitting a straight line to the data.
 most widely used ml algo.
-
+<br>
 ex- **House pricing prediction**
 Regression model predicts numbers (infinitely many possible outputs).
 Classification model predicts categories (small number of possible outputs).
@@ -78,7 +78,7 @@ Classification model predicts categories (small number of possible outputs).
 
 
 The training set has both input features x and output targets y.
-<img src="https://i.imgur.com/Y6k15O3.jpeg" width="500"/>
+<img src="https://i.imgur.com/Y6k15O3.jpeg" width="400"/>
 
 #### **How to represent f?**
 (f is a straight line for now)
@@ -90,26 +90,26 @@ f is a function that takes x as input and depending on the values of w and b, ou
 - When there is only a single feature x, we use Linear regression with one variable, also called Univariate linear regression.
 
 - plotting the training set on a graph
-<img src="https://i.imgur.com/eOXRHQl.jpeg" width="500"/>
+<img src="https://i.imgur.com/eOXRHQl.jpeg" width="400"/>
 
 ## Implementing the model $f_{w,b}$ for linear regression with one variable
 
 #### Notation
 Here is a summary of some of the notation you will encounter.  
 
-| General <img width=70/> <br />  Notation  <img width=70/> | Description<img width=350/>                                                                             | Python (if applicable) |     |
-| :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ | ---------------------- | --- |
-| $a$                                                       | scalar, non bold                                                                                        |                        |     |
-| $\mathbf{a}$                                              | vector, bold                                                                                            |                        |     |
-| **Regression**                                            |                                                                                                         |                        |     |
-| $\mathbf{x}$                                              | Training Example feature values (in this lab - Size (1000 sqft))                                        | `x_train`              |     |
-| $\mathbf{y}$                                              | Training Example  targets (in this lab Price (1000s of dollars))                                        | `y_train`              |     |
-| $x^{(i)}$, $y^{(i)}$                                      | $i_{th}$Training Example                                                                                | `x_i`, `y_i`           |     |
-| m                                                         | Number of training examples                                                                             | `m`                    |     |
-| $w$                                                       | parameter: weight                                                                                       | `w`                    |     |
-| $b$                                                       | parameter: bias                                                                                         | `b`                    |     |
-| $f_{w,b}(x^{(i)})$                                        | The result of the model evaluation at $x^{(i)}$ parameterized by $w,b$: $f_{w,b}(x^{(i)}) = wx^{(i)}+b$ | `f_wb`                 |     |
-
+| General Notation  <img width=70/> | Description                                                                                             | Python (if applicable) |     |
+| :-------------------------------- | :------------------------------------------------------------------------------------------------------ | ---------------------- | --- |
+| $a$                               | scalar, non bold                                                                                        |                        |     |
+| $\mathbf{a}$                      | vector, bold                                                                                            |                        |     |
+| **Regression**                    |                                                                                                         |                        |     |
+| $\mathbf{x}$                      | Training Example feature values (in this lab - Size (1000 sqft))                                        | `x_train`              |     |
+| $\mathbf{y}$                      | Training Example  targets (in this lab Price (1000s of dollars))                                        | `y_train`              |     |
+| $x^{(i)}$, $y^{(i)}$              | $i_{th}$Training Example                                                                                | `x_i`, `y_i`           |     |
+| m                                 | Number of training examples                                                                             | `m`                    |     |
+| $w$                               | parameter: weight                                                                                       | `w`                    |     |
+| $b$                               | parameter: bias                                                                                         | `b`                    |     |
+| $f_{w,b}(x^{(i)})$                | The result of the model evaluation at $x^{(i)}$ parameterized by $w,b$: $f_{w,b}(x^{(i)}) = wx^{(i)}+b$ | `f_wb`                 |     |
+<br>
  we will make use of: 
 - NumPy, a popular library for scientific computing
 - Matplotlib, a popular library for plotting data
@@ -126,6 +126,7 @@ plt.style.use('./deeplearning.mplstyle')
 
 we will use the motivating example of housing price prediction.  
 This lab will use a simple data set with only two data points - a house with 1000 square feet(sqft) sold for \\$300,000 and a house with 2000 square feet sold for \\$500,000. These two points will constitute our *data or training set*. In this lab, the units of size are 1000 sqft and the units of price are 1000s of dollars.
+<br>
 
 | Size (1000 sqft) | Price (1000s of dollars) |
 | ---------------- | ------------------------ |
@@ -219,7 +220,7 @@ plt.xlabel('Size (1000 sqft)')
 plt.show()
 ```
 
-<img src="https://i.imgur.com/NgfNAbS.jpeg" width="500"/>
+<img src="https://i.imgur.com/NgfNAbS.jpeg" width="400"/>
 
 ## Model function
 As described in lecture, the model function for linear regression (which is a function that maps from `x` to `y`) is represented as 
@@ -297,7 +298,7 @@ plt.show()
 ```
 
 
-<img src="https://i.imgur.com/CcRHPme.png" width="500"/>
+<img src="https://i.imgur.com/CcRHPme.png" width="400"/>
 
 
 As you can see, setting $w = 100$ and $b = 100$ does *not* result in a line that fits our data. 
@@ -307,7 +308,8 @@ Try experimenting with different values of $w$ and $b$. What should the values b
 #### Tip:
 Try $w = 200$ and $b = 100$
 
-<img src="https://i.imgur.com/Gs4Rufv.jpeg" width="500"/>
+<img src="https://i.imgur.com/Gs4Rufv.jpeg" width="400"/>
+<br>
 ### Prediction
 Now that we have a model, we can use it to make our original prediction. Let's predict the price of a house with 1200 sqft. Since the units of $x$ are in 1000's of sqft, $x$ is 1.2.
 
